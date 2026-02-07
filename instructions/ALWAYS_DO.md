@@ -36,7 +36,8 @@ Always:
 - Architectural decisions: Create ADR in `work/epics/<epic-slug>/adrs/XXX-decision-title.md`
 - Epic progress/scope changes: Add note to epic spec's Progress Notes section
 - Milestone work: Use tracking doc's Implementation Log section
-- Gaps discovered: Add to `work/GAPS.md` and reference from epic/milestone
+- **Project gaps:** Add to `work/GAPS.md` and reference from epic/milestone
+- **Framework gaps:** Create issue via `gh issue create -R 23min/ai-first-framework` with appropriate labels
 - Ad-hoc work: Log in `PROVENANCE.md` (see `.ai/docs/provenance-format.md`)
 - Gaps are out-of-scope by default; review with architect/planner before placement
 - One-off work requires explicit user approval and must be logged in PROVENANCE.md

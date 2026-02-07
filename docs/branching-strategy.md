@@ -290,7 +290,7 @@ git push origin framework/deployer-rename
 
 - [Framework README](README.md) - Framework overview
 - [Flowchart](flowchart.md) - Visual framework structure
-- [Framework Gaps](../ai/GAPS.md) - Known issues and improvements
+- [Framework Issues](https://github.com/23min/ai-first-framework/issues) - Known issues and improvements
 - [Branching Skill](../.ai/skills/branching.md) - General branching guidance
 
 ---

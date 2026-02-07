@@ -4,6 +4,18 @@ Portable, self-contained AI agent and skill system for structured software devel
 
 7 role-based agents, 15+ workflow skills, multi-target sync (GitHub Copilot + Claude Code).
 
+## Prerequisites
+
+- **git** — for subtree integration
+- **[GitHub CLI (`gh`)](https://cli.github.com/)** — required for issue tracking and contributing. AI agents use `gh` to create, update, and close issues. Install via your package manager or add to your devcontainer:
+  ```json
+  {
+    "features": {
+      "ghcr.io/devcontainers/features/github-cli:1": {}
+    }
+  }
+  ```
+
 ## Installation
 
 ### Add to your project via git subtree

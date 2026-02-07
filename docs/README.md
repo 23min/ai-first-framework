@@ -33,7 +33,7 @@ The AI-First Development Framework is a methodology and toolset for building sof
 - **[Agents](../agents/)** - Role definitions and responsibilities
 - **[Skills](../skills/)** - Step-by-step workflow procedures
 - **[Instructions](../instructions/)** - Global rules (ALWAYS_DO, GETTING_STARTED)
-- **[Framework Gaps](../GAPS.md)** - Known issues and improvements
+- **[Framework Issues](https://github.com/23min/ai-first-framework/issues)** - Known issues and improvements
 
 ---
 
@@ -65,7 +65,6 @@ ai/                          # Complete AI framework
 │   ├── rationale.md         # Design decisions
 │   ├── GETTING-STARTED.md   # Usage guide
 │   └── branching-strategy.md # Git workflow
-├── GAPS.md                  # Framework issues
 └── README.md                # Quick reference
 
 .github/                     # VS Code integration
@@ -148,7 +147,7 @@ This framework is designed to be portable. To use in a new project:
 
 ## Contributing to Framework
 
-Framework improvements are tracked in `.ai/GAPS.md` and developed on the `framework/ai-evolution` branch. See [Branching Strategy](branching-strategy.md) for workflow details.
+Framework improvements are tracked in [GitHub Issues](https://github.com/23min/ai-first-framework/issues). Use `gh issue create -R 23min/ai-first-framework` to report gaps. See [Branching Strategy](branching-strategy.md) for workflow details.
 
 ---
 
