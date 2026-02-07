@@ -1,0 +1,57 @@
+# Project Paths & Overrides
+
+Use this file to configure where roadmap and architecture artifacts live.
+Skills should reference these paths instead of hardcoding locations.
+
+## Setup
+
+Copy this template and fill in your project's paths:
+
+```bash
+cp .ai/instructions/PROJECT_PATHS.md.template .ai/instructions/PROJECT_PATHS.md
+```
+
+Then edit the paths below. Defaults (shown in comments) work for most projects.
+Run `bash .ai/scripts/init-project.sh` to create the directory structure.
+
+## Required Paths
+
+Core skills depend on these — epic and milestone workflows won't function without them.
+
+- **EPIC_ROADMAP_PATH:** `<your-roadmap-file>`  <!-- default: ROADMAP.md -->
+- **EPIC_TECH_ROADMAP_PATH:** `<your-epic-roadmap>`  <!-- default: work/epics/epic-roadmap.md -->
+- **EPICS_PATH:** `<your-epics-dir>`  <!-- default: work/epics/ -->
+- **MILESTONE_PATH:** `<your-milestone-dir>`  <!-- default: work/milestones/ -->
+- **MILESTONE_TRACKING_PATH:** `<your-tracking-dir>`  <!-- default: work/milestones/tracking/ -->
+
+## Recommended Paths
+
+Specific workflows need these (archiving, gap tracking, release management).
+
+- **MILESTONE_RELEASES_PATH:** `<your-releases-dir>`  <!-- default: work/milestones/releases/ -->
+- **GAPS_PATH:** `<your-gaps-file>`  <!-- default: work/GAPS.md -->
+- **PROVENANCE_PATH:** `<your-provenance-file>`  <!-- default: PROVENANCE.md -->
+- **CHANGELOG_PATH:** `<your-changelog-file>`  <!-- default: CHANGELOG.md -->
+
+## Optional Paths
+
+Convenience paths — framework works without them.
+
+- **DEVELOPMENT_GUIDES_PATH:** `<your-guides-dir>`  <!-- default: docs/guides/ -->
+- **SPECS_PATH:** `<your-specs-dir>`  <!-- default: work/specs/ -->
+
+## Framework Paths (Do Not Override)
+
+These paths are part of the framework structure and should not be changed:
+
+- `.ai/agents/` - Agent definitions
+- `.ai/skills/` - Skill definitions
+- `.ai/instructions/` - Framework instructions
+- `.ai/docs/` - Framework documentation
+
+## Notes
+
+- All paths are relative to workspace root
+- Trailing slashes included for directories
+- If this file is missing, agents will use the defaults shown in comments above
+- See `PROJECT_PATHS.md.example` for a complete working configuration
