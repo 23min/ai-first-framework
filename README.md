@@ -361,5 +361,51 @@ When milestones or epics complete, documentation must be updated:
 
 ---
 
+## Contributing via Submodule
+
+If you want to use this framework in your project **and** contribute improvements back, use git submodules. Framework changes stay in the framework repo's history — your project only tracks which commit it points to.
+
+### Setup (one-time)
+
+```bash
+git submodule add git@github.com:23min/ai-first-framework.git .ai
+```
+
+### Devcontainer integration
+
+Add to `.devcontainer/devcontainer.json` so the submodule is initialized on rebuild:
+
+```json
+{
+  "postCreateCommand": "git submodule update --init && bash .ai/scripts/sync-all.sh"
+}
+```
+
+### Pulling framework updates
+
+```bash
+cd .ai && git pull origin main && cd ..
+git add .ai
+git commit -m "chore: update ai-framework submodule"
+bash .ai/scripts/sync-all.sh
+```
+
+### Contributing changes
+
+Edit `.ai/` files directly in your editor. Changes are committed in the framework repo's own git context:
+
+```bash
+cd .ai
+git checkout -b feature/my-improvement
+git add -A && git commit -m "feat: my improvement"
+git push origin feature/my-improvement
+# Then open a PR on the framework repo
+cd ..
+git add .ai
+git commit -m "chore: update ai-framework submodule"
+```
+
+---
+
 **Version:** 1.2.0
 **License:** MIT
