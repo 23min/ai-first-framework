@@ -244,6 +244,32 @@ echo "  Synced ${synced_rules} rules to .claude/rules/"
 echo ""
 
 # ============================================================================
+# SYNC PROJECT_PATHS.md (root → .claude/rules/)
+# Project-owned file, not part of framework. Copy if present.
+# ============================================================================
+
+PROJECT_PATHS="${SCRIPT_DIR}/../../PROJECT_PATHS.md"
+if [ -f "$PROJECT_PATHS" ]; then
+  output="${CLAUDE_RULES_OUTPUT}/PROJECT_PATHS.md"
+  {
+    cat "$PROJECT_PATHS"
+    cat <<FOOTER
+
+---
+
+**Source:** This rule is synced from the project root \`PROJECT_PATHS.md\`
+
+To update, edit \`PROJECT_PATHS.md\` in the project root and run:
+\`\`\`bash
+.ai/scripts/sync-to-claude.sh
+\`\`\`
+FOOTER
+  } > "$output"
+  echo "  + PROJECT_PATHS.md (from project root)"
+  synced_rules=$((synced_rules + 1))
+fi
+
+# ============================================================================
 # SUMMARY
 # ============================================================================
 

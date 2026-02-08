@@ -24,22 +24,22 @@ ok()   { echo "  OK   $1"; }
 skip() { echo "  SKIP $1 — $2"; }
 fail() { echo "  FAIL $1 — $2"; errors=$((errors + 1)); }
 
-# --- PROJECT_PATHS.md ---
+# --- PROJECT_PATHS.md (project root) ---
 
-paths_file="${SCRIPT_DIR}/../instructions/PROJECT_PATHS.md"
+paths_file="${PROJECT_ROOT}/PROJECT_PATHS.md"
 if [ -f "$paths_file" ]; then
-  skip ".ai/instructions/PROJECT_PATHS.md" "already exists"
+  skip "PROJECT_PATHS.md" "already exists in project root"
 else
   example="${SCRIPT_DIR}/../instructions/PROJECT_PATHS.md.example"
   template="${SCRIPT_DIR}/../instructions/PROJECT_PATHS.md.template"
   if [ -f "$example" ]; then
     cp "$example" "$paths_file"
-    ok ".ai/instructions/PROJECT_PATHS.md (from .example with defaults)"
+    ok "PROJECT_PATHS.md (from .example with defaults)"
   elif [ -f "$template" ]; then
     cp "$template" "$paths_file"
-    ok ".ai/instructions/PROJECT_PATHS.md (from .template — edit paths before use)"
+    ok "PROJECT_PATHS.md (from .template — edit paths before use)"
   else
-    fail ".ai/instructions/PROJECT_PATHS.md" "no .example or .template found"
+    fail "PROJECT_PATHS.md" "no .example or .template found"
   fi
 fi
 
@@ -101,7 +101,7 @@ create_file "PROVENANCE.md" \
 echo ""
 if [ $errors -eq 0 ]; then
   echo "  Done. Next steps:"
-  echo "    1. Review .ai/instructions/PROJECT_PATHS.md — adjust paths if needed"
+  echo "    1. Review PROJECT_PATHS.md in project root — adjust paths if needed"
   echo "    2. Run: bash .ai/scripts/sync-all.sh"
 else
   echo "  Done with $errors error(s). Review FAIL lines above."
