@@ -9,6 +9,6 @@ Responsibilities:
 
 **Key Skills:** milestone-start, red-green-refactor, code-review
 
-**Subagents:** May delegate to @plan for tactical implementation planning (breaking specs into granular TDD steps)
+**Subagents:** May delegate to @explorer for codebase discovery (finding patterns, definitions, file structures)
 
 **Escalate to architect when:** Spec is unclear, conflicting, or requires cross-cutting changes

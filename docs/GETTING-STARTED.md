@@ -46,6 +46,10 @@ Ask: "Which agent should work on this?" and describe the task:
 - **Deploying infrastructure** → `deployer` agent (CI/CD, environments)
 - **Framework improvements** → `maintainer` agent (this repo/framework only, not solution code)
 
+**Subagents** (auto-delegated, not invoked directly):
+- `explorer` — Read-only codebase discovery (used by architect, planner, implementer, tester, maintainer)
+- `researcher` — Web research and external knowledge gathering (used by architect, planner)
+
 ### "How do I fix a bug?"
 
 For bugs discovered during development:

@@ -60,6 +60,11 @@ When in doubt: ask the user.
 - Use incremental workflows (don't rewrite entire files)
 - Keep tracking docs concise (link to details rather than embedding)
 - Archive completed milestone docs to reduce context pollution
+- **Prefer subagents for handoffs (when available):**
+  - VSCode Copilot: Use `runSubagent` tool to spawn fresh context
+  - Other environments: Provide concise context summary (max 500 tokens)
+  - Avoid full state transfer; focus handoff on next-action requirements
+- **Multi-agent handoffs:** For complex workflows (architect → implementer → tester → documenter), use subagents with focused context summaries rather than full state transfer
 
 ## Ownership & Handoffs
 
@@ -74,14 +79,59 @@ When in doubt: ask the user.
 - Keep milestone specs stable; use tracking docs for progress updates.
 - Build and test before handoff when asked to implement changes.
 
+## When to Update PROVENANCE.md
+
+Update `PROVENANCE.md` for **ad-hoc work only**, such as:
+- Quick bug fixes from manual prompts
+- Exploratory changes and experiments
+- Documentation improvements
+- Unplanned refactoring
+- Any work NOT part of a formal agent task/milestone
+
+**Do NOT update PROVENANCE.md** for formal agent tasks that have their own tracker files or epic tracking documents.
+
+### Format
+```markdown
+### YYYY-MM-DD [HH:MM] - Brief Description
+**By:** Author + AI Tool | **Commit:** `hash` (if available)
+
+Description of changes made.
+
+**Files:** file1.ts, file2.md
+```
+
 ## Commit Messages
 
 - Use Conventional Commits format (see `.ai/docs/commit-format.md`)
 - Keep subject line under 72 characters, imperative mood
+- Add `Co-authored-by: GitHub Copilot` (or appropriate AI tool) for AI-assisted work
 
 ## Language
 
 **Repository language:** English — all code, comments, documentation, commit messages, and AI instructions.
+
+## Long Session Protocol
+
+**For conversations >20 exchanges or when context seems stale:**
+
+1. **Proactively suggest context refresh** when:
+   - User asks about something covered earlier
+   - You notice potential context drift
+   - Before starting new major work (epic/milestone)
+   - Session has been going for extended period
+
+2. **Refresh by using context-refresh skill:**
+   - Re-read `.ai/instructions/ALWAYS_DO.md`
+   - Re-read active agent definition
+   - Check active epic/milestone docs
+   - Confirm current state with user
+
+3. **User can trigger refresh anytime** by saying:
+   - "Refresh context"
+   - "Reload instructions"
+   - "What's my current state?"
+
+See `.ai/skills/context-refresh.md` for full procedure.
 
 ## General
 

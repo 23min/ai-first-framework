@@ -32,6 +32,12 @@ graph TD
     De[Deployer] -.->|infra decisions| A
     D -->|"epic-wrap (when all milestones done)"| De
 
+    A -.->|codebase search| E[Explorer]
+    P -.->|codebase search| E
+    I -.->|codebase search| E
+    A -.->|web research| R[Researcher]
+    P -.->|web research| R
+
     style A fill:#e1f5fe
     style P fill:#f3e5f5
     style D fill:#fff3e0
@@ -39,6 +45,8 @@ graph TD
     style T fill:#fce4ec
     style De fill:#f5f5f5
     style M fill:#efebe9
+    style E fill:#e0f7fa
+    style R fill:#f1f8e9
 ```
 
 **Key:** Solid lines = primary flow. Dotted lines = escalation routes.
