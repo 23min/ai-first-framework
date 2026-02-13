@@ -21,7 +21,7 @@ Responsibilities:
 ## Research: {goal}
 
 **Sources consulted:**
-- [Title](url) — relevance note
+- `[Title](https://...)` — relevance note
 - ...
 
 **Key findings:**

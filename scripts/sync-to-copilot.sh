@@ -76,28 +76,28 @@ for file in "${AGENTS_DIR}"/*.md; do
   # Determine tools by agent role
   case "$basename" in
     planner|architect)
-      tools="['agent', 'search', 'web/fetch', 'usages', 'github/repo']"
+      tools="['agent', 'search', 'web/fetch', 'search/usages', 'web/githubRepo']"
       ;;
     implementer)
-      tools="['*']"
+      tools="['agent', '*']"
       ;;
     tester)
-      tools="['agent', 'search', 'web/fetch', 'usages', 'terminal', 'grep']"
+      tools="['agent', 'search', 'web/fetch', 'search/usages', 'execute/runInTerminal', 'search/textSearch']"
       ;;
     documenter)
-      tools="['search', 'web/fetch', 'usages', 'edit']"
+      tools="['search', 'web/fetch', 'search/usages', 'edit']"
       ;;
     deployer)
-      tools="['terminal', 'docker', 'web/fetch', 'edit']"
+      tools="['execute/runInTerminal', 'web/fetch', 'edit']"
       ;;
     maintainer)
-      tools="['agent', 'search', 'web/fetch', 'usages', 'grep', 'edit']"
+      tools="['agent', 'search', 'web/fetch', 'search/usages', 'search/textSearch', 'edit']"
       ;;
     explorer)
-      tools="['search', 'usages', 'grep']"
+      tools="['search', 'search/usages', 'search/textSearch']"
       ;;
     researcher)
-      tools="['web/fetch', 'github/repo']"
+      tools="['web/fetch', 'web/githubRepo']"
       ;;
     *)
       tools="['search', 'web/fetch']"

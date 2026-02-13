@@ -2,7 +2,7 @@
 
 Portable, self-contained AI agent and skill system for structured software development.
 
-7 role-based agents, 15+ workflow skills, multi-target sync (GitHub Copilot + Claude Code).
+9 role-based agents, 15+ workflow skills, multi-target sync (GitHub Copilot + Claude Code).
 
 ## Prerequisites
 
